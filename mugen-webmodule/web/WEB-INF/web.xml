@@ -61,11 +61,6 @@
         <servlet-class>org.mugen.ws.mugenwsImpl</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet>
-        <servlet-name>ServletAdaptor</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ServletRedirector</servlet-name>
         <url-pattern>/ServletRedirector</url-pattern>
@@ -125,10 +120,6 @@
     <servlet-mapping>
         <servlet-name>WSServlet_mugenws</servlet-name>
         <url-pattern>/mugenws</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletAdaptor</servlet-name>
-        <url-pattern>/resources/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -327,16 +318,4 @@
         <remote>com.arexis.mugen.model.modelmanager.ModelManagerRemote</remote>
         <ejb-link>mugen-projectmodule.jar#ModelManagerBean</ejb-link>
     </ejb-ref>
-    <resource-ref>
-        <res-ref-name>jms/IndividualImportDestinationFactory</res-ref-name>
-        <res-type>javax.jms.ConnectionFactory</res-type>
-        <res-auth>Container</res-auth>
-        <res-sharing-scope>Shareable</res-sharing-scope>
-    </resource-ref>
-    <resource-ref>
-        <res-ref-name>jms/ImpDestinationFactory</res-ref-name>
-        <res-type>javax.jms.ConnectionFactory</res-type>
-        <res-auth>Container</res-auth>
-        <res-sharing-scope>Shareable</res-sharing-scope>
-    </resource-ref>
 </web-app>

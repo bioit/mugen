@@ -421,7 +421,7 @@
         <state name="viewUMarkerSetPositions" preaction="genotype.GetUMarkerSetPositionsAction" viewURI="views/genotype/UMarkerSetPositionsView.jsp" action="genotype.UMarkerSetPositionPostAction"/>
         <state workflow="ViewUMarkerSetPositions"/>
     </workflow> 
-    <workflow name="CreateUMarkerSet">
+    <!--workflow name="CreateUMarkerSet">
         <state name="createUMarkerSet" preaction="genotype.GetUMarkerSetAction" viewURI="views/genotype/UMarkerSetCreateView.jsp" action="genotype.SaveUMarkerSetAction"/>
         <state workflow="ViewUMarkerSets"/>
     </workflow> 
@@ -431,12 +431,12 @@
     </workflow> 
     <workflow name="ViewUMarkerSet">
         <state name="viewUMarkerSet" preaction="genotype.GetUMarkerSetAction" viewURI="views/genotype/UMarkerSetView.jsp"/>       
-    </workflow> 
+    </workflow-->
     <workflow name="ViewUMarkerSets">
         <state name="viewUMarkerSets" preaction="genotype.GetUMarkerSetsAction" viewURI="views/genotype/UMarkerSetsView.jsp" action="genotype.UMarkerSetsPostAction"/>
         <state workflow="ViewUMarkerSets"/>
     </workflow> 
-    <workflow name="EditUMarker">
+    <!--workflow name="EditUMarker">
         <state name="editUMarker" preaction="genotype.GetUMarkerAction" viewURI="views/genotype/UMarkerEditView.jsp" action="genotype.SaveUMarkerAction"/>
         <state workflow="ViewUMarkers"/>
     </workflow> 
@@ -449,7 +449,7 @@
     <workflow name="ViewUMarker">
         <state name="viewUMarker" preaction="genotype.GetUMarkerAction" viewURI="views/genotype/UMarkerView.jsp"/>       
         <state workflow="ViewUMarkers"/>
-    </workflow> 
+    </workflow-->
     <workflow name="CreateUAllele">
         <state name="createUAllele" viewURI="views/genotype/UAlleleCreateView.jsp" action="genotype.SaveUAlleleAction"/>
         <state workflow="ViewUMarkerAlleles"/>
@@ -474,16 +474,16 @@
         <state name="deleteUMarkerMapping" preaction="genotype.RemoveUMarkerMappingAction" viewURI="views/genotype/UMarkerMappingView.jsp"/>   
         <state workflow="ViewUMarkerMapping"/>
     </workflow>
-    <workflow name="ViewUMarkerMapping">
+    <!--workflow name="ViewUMarkerMapping">
         <state name="viewUMarkerMapping" preaction="genotype.GetUMarkerMappingAction" viewURI="views/genotype/UMarkerMappingView.jsp" action="genotype.UMarkerMappingPostAction">                   
             <alt name="CREATE" workflow="CreateUMarkerMapping"/>
         </state>        
         <state workflow="ViewUMarkerMapping"/>
-    </workflow> 
-    <workflow name="ViewUMarkers">
+    </workflow-->
+    <!--workflow name="ViewUMarkers">
         <state name="viewUMarkers" preaction="genotype.GetUMarkersAction" viewURI="views/genotype/UMarkersView.jsp" action="genotype.UMarkersPostAction"/>
         <state workflow="ViewUMarkers"/>
-    </workflow> 
+    </workflow-->
     <workflow name="ViewMarkerSetMembership">
         <state name="viewMarkerSetMembership" preaction="genotype.GetMarkerSetMembershipAction" viewURI="views/genotype/MarkerSetMembershipView.jsp" action="genotype.MarkerSetMembershipPostAction"/>
         <state workflow="ViewMarkerSetMembership"/>

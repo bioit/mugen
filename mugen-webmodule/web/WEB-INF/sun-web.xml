@@ -110,26 +110,6 @@
     <jndi-name>ejb/FileBean</jndi-name>
   </ejb-ref>
   <ejb-ref>
-    <ejb-ref-name>ejb/ImporterBean</ejb-ref-name>
-    <jndi-name>ejb/ImporterBean</jndi-name>
-  </ejb-ref>
-  <ejb-ref>
-    <ejb-ref-name>ejb/ImporterBean1</ejb-ref-name>
-    <jndi-name>ejb/ImporterBean1</jndi-name>
-  </ejb-ref>
-  <ejb-ref>
-    <ejb-ref-name>ejb/ImporterBean2</ejb-ref-name>
-    <jndi-name>ejb/ImporterBean2</jndi-name>
-  </ejb-ref>
-  <ejb-ref>
-    <ejb-ref-name>ejb/ImporterBean3</ejb-ref-name>
-    <jndi-name>ejb/ImporterBean3</jndi-name>
-  </ejb-ref>
-  <ejb-ref>
-    <ejb-ref-name>ejb/ImporterBean4</ejb-ref-name>
-    <jndi-name>ejb/ImporterBean4</jndi-name>
-  </ejb-ref>
-  <ejb-ref>
     <ejb-ref-name>ejb/AdminManagerBean</ejb-ref-name>
     <jndi-name>ejb/AdminManagerBean</jndi-name>
   </ejb-ref>
@@ -137,13 +117,5 @@
     <ejb-ref-name>ejb/ModelManagerBean</ejb-ref-name>
     <jndi-name>ejb/ModelManagerBean</jndi-name>
   </ejb-ref>
-  <resource-ref>
-    <res-ref-name>jms/IndividualImportDestinationFactory</res-ref-name>
-    <jndi-name>jms/IndividualImportDestinationFactory</jndi-name>
-  </resource-ref>
-  <resource-ref>
-    <res-ref-name>jms/ImpDestinationFactory</res-ref-name>
-    <jndi-name>jms/ImpDestinationFactory</jndi-name>
-  </resource-ref>
   <parameter-encoding default-charset="UTF-8"/>
 </sun-web-app>

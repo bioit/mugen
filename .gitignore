@@ -1,0 +1,17 @@
+*.class
+*.ear
+*.war
+arx/arxframe/build/*
+arx/arxframe/dist/*
+arx/arxlib/build/*
+arx/arxlib/dist/*
+arx/arxtags/build/*
+arx/arxtags/dist/*
+mugen-app/build/*
+mugen-beanmodule/build/*
+mugen-beanmodule/dist/*
+mugen-beanmodule/nbproject/*
+mugen-webmodule/build/*
+mugen-webmodule/nbproject/*
+mugen-dtos/build/*
+mugen-dtos/dist/*

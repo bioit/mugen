@@ -137,17 +137,16 @@ public class ProjectManagerBean extends AbstractMugenBean implements javax.ejb.S
      * @throws com.arexis.mugen.exceptions.LoginException If anything goes wrong, this exception is thrown and the user should not login.
      * @return a caller object that the user have during a valid session.
      */
-    public MugenCaller login(java.lang.String usr, java.lang.String pwd) throws LoginException
-    {
-        MugenCaller up = null;
-        try
-        {
+    public MugenCaller login(java.lang.String usr, java.lang.String pwd) throws LoginException {
+        MugenCaller up = new MugenCaller();
+        try {
             // if correct usr and password
             
             
             UserRemote user = userHome.findByUserAndPwd(usr, pwd);
             if(user!=null){
-                up = new MugenCaller();
+                logger.debug("user object is not null. name is " + user.getName());
+//                up = new MugenCaller();
                 up.setId(user.getId());
                 up.setName(user.getName());
                 up.setUsr(user.getUsr());
@@ -157,15 +156,16 @@ public class ProjectManagerBean extends AbstractMugenBean implements javax.ejb.S
             
             
         }
-        catch (FinderException e)
-        {
-            e.printStackTrace();
-            throw new LoginException("User "+usr+" could not log in. Username or password was wrong", e);
+        catch (FinderException e) {
+//            ZOUB FIX - Swallow exceptions
+//            e.printStackTrace();
+//            throw new LoginException("User "+usr+" could not log in. Username or password was wrong", e);
+            logger.error("Did not manage to find user " + usr + " with password " + pwd + " \n " + getStackTrace(e));
         }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            throw new LoginException("Unknown error: "+e.getMessage(), e);
+        catch (Exception e) {
+//            e.printStackTrace();
+//            throw new LoginException("Unknown error: "+e.getMessage(), e);
+            logger.error("Unknow error for user " + usr + " with password " + pwd + " \n " + getStackTrace(e));
         }
         return up;
     }

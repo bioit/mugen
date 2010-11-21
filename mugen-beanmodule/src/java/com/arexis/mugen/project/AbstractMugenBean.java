@@ -1,5 +1,6 @@
 package com.arexis.mugen.project;
 
+import com.arexis.arxframe.Controller;
 import com.arexis.mugen.exceptions.ApplicationException;
 import com.arexis.mugen.exceptions.PermissionDeniedException;
 import com.arexis.mugen.MugenCaller;
@@ -8,8 +9,9 @@ import com.arexis.mugen.id.PostgresId;
 import com.arexis.mugen.project.project.ProjectRemote;
 import com.arexis.mugen.project.user.UserRemoteHome;
 import com.arexis.mugen.servicelocator.ServiceLocator;
-import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import java.io.StringWriter;
 import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,11 +20,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import javax.ejb.EJBException;
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.TTCCLayout;
-import org.apache.log4j.xml.XMLLayout;
 
 /**
  * This is the Abstract superclass for all Beans in the Mugen Application.
@@ -38,6 +36,8 @@ public abstract class AbstractMugenBean implements Serializable {
     
     protected static int countMakeConnection;
     protected static int countReleaseConnection;
+
+    protected static Logger logger = Logger.getLogger(AbstractMugenBean.class);
 
     public AbstractMugenBean() {
               
@@ -295,5 +295,17 @@ public abstract class AbstractMugenBean implements Serializable {
         }  
         
         return sql;
+    }
+
+    /*
+     * Returns the stack trace as string
+     */
+    public String getStackTrace(Throwable t) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw, true);
+        t.printStackTrace(pw);
+        pw.flush();
+        sw.flush();
+        return sw.toString();
     }
 }

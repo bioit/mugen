@@ -35,17 +35,7 @@ public class Logit extends HttpServlet {
         out.println("<div id=\"centered2\">");
         
         Caller caller = (Caller)request.getSession().getAttribute("caller");
-        if (caller==null || caller.getUsr().compareTo("public")==0){
-            out.println("<form action=\"Controller?workflow=begin\" name=\"login\" method=\"post\" target=\"_top\">");
-            out.println("<table id=\"logit\">");
-            out.println("<tr><td class=\"logit\">user:</td></tr>");
-            out.println("<tr><td><input type=\"text\" name=\"usr\" maxlength=\"19\" size=\"19\" class=\"logit\"></td></tr>");
-            out.println("<tr><td class=\"logit\">pass:</td></tr>");
-            out.println("<tr><td><input type=\"password\" name=\"pwd\" maxlength=\"19\" size=\"19\" class=\"logit\"></td></tr>");
-            out.println("<tr><td><input name=\"submit\" type=\"image\" src=\"images/icons/login.png\" align=\"left\"></td></tr>");
-            out.println("</table>");
-            out.println("</form>");
-        }else{
+        if (caller!=null && caller.getUsr().compareToIgnoreCase("public")!=0){
             out.println("<form action=\"Controller?workflow=logout\" name=\"login\" method=\"post\" target=\"_top\">");
             out.println("<table id=\"logit\">");
             out.println("<tr><td class=\"logit\">user: "+caller.getUsr());
@@ -53,6 +43,16 @@ public class Logit extends HttpServlet {
             //out.println("<input type=\"hidden\" name=\"pwd\" value=\"notknown\">");
             out.println("</tr></td>");
             out.println("<tr><td><input name=\"submit\" type=\"image\" src=\"images/icons/logout.png\" align=\"left\"></td></tr>");
+            out.println("</table>");
+            out.println("</form>");
+        }else{
+            out.println("<form action=\"Controller?workflow=begin\" name=\"login\" method=\"post\" target=\"_top\">");
+            out.println("<table id=\"logit\">");
+            out.println("<tr><td class=\"logit\">user:</td></tr>");
+            out.println("<tr><td><input type=\"text\" name=\"usr\" maxlength=\"19\" size=\"19\" class=\"logit\"></td></tr>");
+            out.println("<tr><td class=\"logit\">pass:</td></tr>");
+            out.println("<tr><td><input type=\"password\" name=\"pwd\" maxlength=\"19\" size=\"19\" class=\"logit\"></td></tr>");
+            out.println("<tr><td><input name=\"submit\" type=\"image\" src=\"images/icons/login.png\" align=\"left\"></td></tr>");
             out.println("</table>");
             out.println("</form>");
         }
