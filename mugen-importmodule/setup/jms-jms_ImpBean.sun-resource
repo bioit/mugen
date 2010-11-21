@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <jms-resource enabled="true" jndi-name="jms/ImpBean" res-type="javax.jms.Queue">
+    <description/>
+    <property name="Name" value="ImpBean"/>
+  </jms-resource>
+</resources>

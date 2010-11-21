@@ -1,0 +1,70 @@
+/*
+ * ViewIndividualsPostAction.java
+ *
+ * Created on November 28, 2005, 3:20 PM
+ *
+ * To change this template, choose Tools | Options and locate the template under
+ * the Source Creation and Management node. Right-click the template and choose
+ * Open. You can then make changes to the template in the Source Editor.
+ */
+
+package com.arexis.mugen.webapp.action.samplingunit;
+
+import com.arexis.arxframe.ActionException;
+import com.arexis.form.FormDataManager;
+import com.arexis.mugen.MugenCaller;
+import com.arexis.mugen.MugenFormDataManagerFactory;
+import com.arexis.mugen.webapp.action.MugenAction;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+/**
+ *
+ * @author lami
+ */
+public class ViewIndividualsPostAction extends MugenAction {
+    
+    /** Creates a new instance of ViewIndividualsPostAction */
+    public ViewIndividualsPostAction() {
+    }
+    /**
+     * Returns the name of this action
+     * @return The name of the action
+     */
+    public String getName() {
+        return "ViewIndividualsPostAction";
+    }
+    
+    /**
+     * Performs the action
+     * @param request The http request object
+     * @param context The servlet context
+     * @throws com.arexis.mugen.exceptions.ApplicationException If the action could not be performed
+     * @return True if the action could be performed
+     */
+    public boolean performAction(HttpServletRequest request, ServletContext context) throws ActionException {
+        try {
+            System.out.println(getName());
+            HttpSession session = request.getSession();           
+            MugenCaller caller = (MugenCaller)session.getAttribute("caller");
+                 
+            if(isSubmit(request, "reset"))
+            {
+                resetFormData(MugenFormDataManagerFactory.INDIVIDUALS_FILTER, request);
+            }
+            else {
+                collectFormData(MugenFormDataManagerFactory.INDIVIDUALS_FILTER, MugenFormDataManagerFactory.WEB_FORM, request);            
+            }
+            
+            String tmpSuid = request.getParameter("suid");
+            if(tmpSuid != null)
+                caller.setSuid(Integer.parseInt(tmpSuid));                
+            
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ActionException("Error in post action for individuals.");
+        }
+    }      
+}

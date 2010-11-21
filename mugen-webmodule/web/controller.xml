@@ -1,0 +1,4 @@
+<controller>
+    <workflow-manager class="com.arexis.arxframe.advanced.AdvancedWorkflowManager"/>
+    <login class="com.arexis.mugen.MugenLogin"/>
+</controller>

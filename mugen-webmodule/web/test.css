@@ -1,0 +1,685 @@
+<STYLE type="text/css">
+/* General style */
+body {
+    color: #000000;
+    font-family: Verdana, Helvetica, Arial, sans-serif;   
+}
+
+td.welcome{
+    /*font-size: 10pt;*/
+    line-height: 2; 
+}
+
+table.quest_a{
+    /*font-size: 10pt;*/
+    line-height: 2; 
+}
+
+p.navtext {
+    border: 0;
+    margin: 0;
+    color: #5A5A5A;
+    font-size: 9px;
+    /*font-weight: bold;*/
+    /*padding: 3px 0px 3px 2px;*/
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+a.menu:hover{
+    color: #5A5A5A;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+a.menu {
+    color: #CA6800;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+strong.about {
+    color: #5A5A5A;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.welcome{
+    color: #5A5A5A;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.welcome:hover {
+    color: #CA6800;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/*--other resources--*/
+
+a.rsrc{
+    color: #5A5A5A;
+    font-size: 11px;
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+a.rsrc:hover {
+    color: #CA6800;
+    font-size: 11px;
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+a.icon {
+    color: #000000;
+    text-decoration: none;
+}
+
+a.icon:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+/* Disclamer on login page */
+#small {
+    font-size: 9px;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#ruler {
+    width: 100%;    
+}
+
+#rulernew {
+	border-top: 1px dashed #CA6800;
+	border-bottom: 0px dashed #CA6800;
+	border-left: 0px dashed #CA6800;
+	border-right: 0px dashed #CA6800;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	height: 0px;
+	width: 100%;   
+}
+
+#ruler100 {
+    width: 100px;    
+}
+
+#ruler200 {
+    width: 200px;    
+}
+
+#bodyChromo {
+    color: #000000; 
+    font-family: Verdana, Helvetica, Arial, sans-serif; 
+    background-image: url('images/chromosome.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom right; 
+}
+/*---content frame css props---*/
+body.content{
+    margin: 0px 5px 0px 0px;
+}
+
+body.contentdirect{
+    margin: 0px 5px 0px 5px;
+}
+
+/*---top frame css properties---*/
+
+body.toptable{
+    margin: 0px 0px 5px 0px;
+}
+
+table.toptable{
+    text-align: left;
+    background-color: #DEDBCB;
+    background-image: url('images/version.2.0/top.frame/top_back.png');
+    background-repeat: no-repeat;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border-width: 0px;
+    width: 100%;
+    height: 50px;
+    margin-left: 0px;
+} 
+
+table.toptabledirect{
+    text-align: left;
+    background-color: #DEDBCB;
+    background-image: url('images/version.2.0/top.frame/top_back.png');
+    background-repeat: no-repeat;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border-width: 0px;
+    margin: 0px 0px 5px 0px;
+    width: 100%;
+    height: 50px;
+    margin-left: 0px;
+}
+/*---end of top frame properties--*/
+
+/*---close window controller prop--*/
+body.winctrl{
+    margin: 0px 0px 5px 0px;
+}
+
+table.winctrl{
+    text-align: left;
+    color: #DEDBCB;
+    font-size: 10px;
+    background-color: #503517;
+    background-repeat: no-repeat;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border-width: 0px;
+    width: 100%;
+    height: 19px;
+    margin-left: 0px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+table.winctrldirect{
+    text-align: left;
+    color: #DEDBCB;
+    font-size: 10px;
+    background-color: #503517;
+    background-repeat: no-repeat;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border-width: 0px;
+    margin: 0px 0px 5px 0px;
+    width: 100%;
+    height: 19px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.winctrl {
+    color: #DEDBCB;
+    font-size: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.winctrl:hover {
+    color: #DEDBCB;
+    font-size: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+td.winctrl {
+    color: #DEDBCB;
+    font-size: 10px;
+    text-decoration: none;
+    text-align: left;
+}  
+/*---end of window controller prop--*/
+
+h1 {
+    color: #5A5A5A;
+    font-size: 15px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #DEDBCB;
+    padding: 7px 7px 7px 2px;
+    margin: 0px 0px 5px 0px;
+}
+
+h2 {
+    font-size: 18px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-size: 15px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+h4 {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #CA6800;
+    padding: 5px 5px 5px 2px;
+    margin: 0px 0px 5px 0px;
+}
+
+h5 {
+    color: #CA6800;
+    font-size: 18px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #FFFFFF;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 5px 0px;
+}
+
+p {
+    font-size: 13px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+p.toolbar {
+    color: #DEDBCB;
+    font-size: 10px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    vertical-align: top;
+    background-color: #5A5A5A;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 5px 0px;
+}
+
+p.quest_bar {
+    color: #DEDBCB;
+    font-size: 5px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    vertical-align: top;
+    background-color: #5A5A5A;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 5px 0px;
+}
+
+
+table.info {
+    width: 100%;
+}
+
+th.info {}
+tr.info {}
+td.info {}
+
+img {
+    border: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    /*vertical-align: middle;*/
+}
+
+img.navimg{
+    border: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+img.link{
+    border: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#logo {
+    background-image: url('images/logo.jpg');
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+/* Window settings */
+
+table.window {
+    width: 100%;
+    border: 0px solid #CCCCCC;
+    text-align: left;
+    border-spacing: 0px;
+    vertical-align: top;
+}
+
+th.window {
+    text-align: left;
+    font-size: 11px;
+    border-collapse: collapse;
+
+    color: #FFFFFF;
+    background-color: #3776AE;
+    border-width: 0px;
+    background-repeat: repeat-x;
+}
+
+table.login {
+    border: 1px solid #CCCCCC;
+}
+
+table.centered {
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;   
+}
+
+#centered {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+
+#centered2 {
+    /*position: absolute;*/
+    background-color: #ACA6A1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 140px;
+    height: 200px;
+    margin: 0px 5px 0px 0px;
+}
+
+body.logit{
+    margin: 5px 5px 0px 0px;
+}
+
+table.logit {
+    margin: 0px 0px 0px 0px;  
+}
+
+td.logit{
+    color: #FFFFFF;
+}
+
+caption.block {
+    caption-side: top;
+}
+
+/*
+    Settings for printer friendly view
+*/
+
+th.pftitle {
+    /*border: 1px solid #CCCCCC;*/
+    text-align: left;
+    font-size: 15px;
+}
+td.pftitle {
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold; 
+}
+
+
+th.menu {
+    background-image: url('images/menu_gradient.png');
+    background-repeat: repeat-y;
+    border: 0px solid #CCCCCC;
+    text-align: center;
+    font-size: 15px;
+    border-collapse: collapse;
+    width: 20px;
+}
+
+table.block {   
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+th.block {
+    color: #5A5A5A;
+    text-align: left;
+    font-size: 11px;
+    width: 100%;
+    background-color: #CCCCCC;
+    border-collapse: collapse;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    border-width: 0px;
+    height: 19px;
+    margin-left: 0px;
+}
+
+th.block a{
+    color: #5A5A5A;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+
+tr.block {
+    text-align: left;
+    border-spacing: 10px;
+    vertical-align: top;
+}
+
+td.block {
+    text-align: left;
+    border-spacing: 10px;
+    vertical-align: top;
+}
+
+ul, li, td, th{
+    font-family: Verdana, Helvetica, Arial, sans-serif; 
+    font-size: 11px;
+}
+
+#tableSize40 {
+    width: 40%;
+}
+
+#tableSize60 {
+    width: 60%;
+}
+
+#tableSize80 {
+    width: 80%;
+}
+
+#tableSize100 {
+    width: 100%;
+}
+
+th {
+   font-weight: bold; 
+}
+
+/* End General style */
+
+/* Form styles */
+
+form{
+    margin: 0px 0px 0px 0px;
+}
+
+#button {
+    width: auto;
+    border: 3px double #999999;
+    border-top-color: #CCCCCC;
+    border-left-color: #CCCCCC;
+    padding: 0.15em;
+    background-color: #EEEEEE;
+    background-image: url('images/buttons/button_shade.gif');
+    background-repeat: repeat-x;
+    color: #333333;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+#button:active
+{
+    border: 3px double #CCCCCC;
+    border-top-color: #999999;
+    border-left-color: #999999;
+}
+
+#button:hover
+{
+    color: #000000;
+}
+
+textarea {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+select { 
+    width: 120px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+select.flex {
+    width: 100%;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+#select150 { 
+    width: 150px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+input {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+input.check {
+    vertical-align: bottom;
+}
+
+
+/* ---------- END FORMS STYLE ----------- */
+  
+
+/* Style of data table class */
+
+table.data{
+    text-align: left;
+    color: #000000;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    /*border-style: solid;*/
+    border-width: 0px;
+    /*border-color: #CCCCCC;*/
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr.data{
+    caption-side: top;
+}
+
+tr.alternatingOne{
+    background-color: #FFFFFF;
+    vertical-align: top;
+}
+
+tr.alternatingTwo{
+    background-color: #F1F1F1;
+    vertical-align: top;
+}
+
+th.data{
+    /*color: #FFFFFF;*/
+    /*background-color: #3776AE;*/
+    color: #DEDBCB;
+    background-color: #503517;
+    border-width: 2px;
+    background-repeat: repeat-x;
+}
+
+th.data2{
+    color: #5A5A5A;
+    background-color: #DEE3E3;
+    border-width: 2px;
+    background-repeat: repeat-x;
+}
+
+th.data3{
+    color: #DEDBCB;
+    background-color: #5A5A5A;
+    border-width: 2px;
+    background-repeat: repeat-x;
+}
+
+td.data{
+    text-align: top;
+}
+
+th.block_data{
+    color: #000000;
+    background-color: #BBD2F3;
+    border-width: 2px;
+    background-repeat: repeat-x;
+}
+
+table.block_data{
+    text-align: left;
+    color: #000000;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: #CCCCCC;*/
+    border-collapse: collapse;
+    width: 100%;
+    /*margin: 0px 0px 0px 0px;*/
+    /*padding: 0px 0px 0px 0px;*/
+}
+
+/*---------- End data table --------------*/
+/* Style of default table (no css at all) */
+
+table.default, th.default, tr.default, td.default{}
+/* --------- End default style -----------*/
+
+
+div.box {
+    position: absolute;
+    top: 10px;
+    left: 500px;
+    width: 300px;
+    padding: 10px;
+}
+
+/* Layer containers... */
+#ind_container {
+    position: relative;
+    height: 150px;
+    z-index: 100;
+}
+
+#container {
+    position: relative;
+    z-index: 100;
+}
+
+/* Include id's for all your layers here, with commas between. */
+#lyr1, #lyr2, #lyr3 { 
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#dhtmltooltip{
+    position: absolute;
+    width: 150px;
+    border: 1px solid black;
+    padding: 2px;
+    background-color: #E9E9E9;
+    visibility: hidden;
+    z-index: 100;
+    /*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+
+
+</style>

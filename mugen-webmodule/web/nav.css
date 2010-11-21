@@ -1,0 +1,125 @@
+body{
+    margin: 0px 5px 0px 0px;
+}
+
+body.frameright{
+    margin: 0px 5px 0px 0px;
+    
+}
+
+body.eu{
+    background: #F7F7F7;
+    margin: 0px 5px 0px 0px;
+}
+#linkcontainer { margin-left: 0px; }
+
+a.linkcont{ 
+    display: block;
+    color: #FFFFFF;
+    background: #FFFFFF;
+    width: 70px;
+    height: 45px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 11px;
+    /*font-weight: bold; */
+}
+
+body.menu{
+    /*margin: 0px 0px 5px 0px;*/
+    margin: 0px 0px 0px 0px;
+}
+
+#navcontainer { 
+    background: #CA6800;
+    margin-left: 0px;
+    width: 140px;
+    height: 100%;
+    
+}
+
+#navcontainer ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+#navcontainer ul ul
+{
+    margin-left: 0px;
+    padding: 0px 10px;
+    list-style-type: none;
+    background: #FFFFFF;
+}
+
+#navcontainer ul ul ul
+{
+    margin-left: 6px;
+    padding: 0px 15px;
+    list-style-type: none;
+}
+
+#navcontainer a
+{
+    display: block;
+    color: #FFFFFF;
+    background: #CA6800;
+    background-repeat: repeat-none;
+    width: 130px;
+    padding: 2px 5px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#navcontainer a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+#navcontainer li { margin: 0; }
+
+#navcontainer li li a
+{
+    display: block;
+    color: #333;
+    background-color: transparent;
+    background-image: none;
+    width: 100px;
+    padding: 0px 0px;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+#navcontainer li li li a
+{
+    display: block;
+    color: #333;
+    background-color: transparent;
+    background-image: none;
+    width: 80px;
+    padding: 0px 10px;
+    margin: 0;
+    border: none;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+tr, td{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 11px; 
+}

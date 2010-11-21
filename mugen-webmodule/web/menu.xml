@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus target="page" topTarget="_top">
+    
+    <!--admin menu header-->
+    <menu name="Server Admin" admin="true" priv="DEV">
+        <menu-item name="Projects" workflow="ProjectsInfo">
+            <menu-item name="View" workflow="AdminViewProjects"/>
+            <menu-item name="Create" workflow="AdminCreateProject"/>
+        </menu-item>
+        <menu-item name="Users">
+            <menu-item name="View" workflow="AdminViewUsers"/>
+            <menu-item name="Create" workflow="AdminCreateUser"/>
+        </menu-item>
+        <menu-item name="Species">
+            <menu-item name="View" workflow="AdminViewSpecies"/>
+            <menu-item name="Create" workflow="AdminCreateSpecies"/>            
+        </menu-item>
+    </menu>
+    
+    <!--projects header-->
+    <menu name="Projects" priv="DEV">
+        <menu-item name="Select project" workflow="ProjectProperties"/>
+        <menu-item name="Select Sampling Unit" workflow="SelectSU"/>
+        <menu-item name="Project info" workflow="ViewProjectInfo"/>
+        <menu-item name="Roles" priv="PROJECT_ADM">
+            <menu-item name="View" workflow="ViewRoles"/>
+            <menu-item name="Create" workflow="CreateRole"/>
+            <menu-item name="Import" priv="DEV" workflow="ImportRoles"/>
+        </menu-item>
+        <menu-item name="Users" priv="PROJECT_ADM">
+            <menu-item name="Project members" workflow="ViewProjectUsers"/>
+            <menu-item name="All users" workflow="AdminViewUsers"/>
+        </menu-item>
+        <menu-item name="Statistics" priv="DEV" workflow="ViewProjectStats"/>
+    </menu>
+    
+    <!--simple logs header-->
+    <menu name="Spy Log" priv="DEV" workflow="ViewSimpleLogs"/>
+    
+    <!--experimental setup header-->
+    <menu name="Experimental setup" priv="EXPSETUP_R">
+        <menu-item name="Sampling Unit" priv="SU_R" workflow="SamplingUnitInfo">
+            <menu-item name="View and Edit" alt-name="View" priv="SU_W" alt-priv="SU_R" workflow="ViewSamplingUnits"/>
+            <menu-item name="Create" priv="SU_W" workflow="CreateSamplingUnit"/>
+        </menu-item>
+        
+        <menu-item name="Individuals" priv="IND_R">
+            <menu-item name="View and Edit" alt-name="View" priv="IND_W" alt-priv="IND_R" workflow="ViewIndividuals"/>
+            <menu-item name="Create" workflow="CreateIndividual" priv="IND_W"/>
+            <menu-item name="File import" workflow="ImportIndividual" priv="DEV"/>
+            <menu-item name="Groupings" priv="GRP_R">
+                <menu-item name="View and edit" workflow="ViewGroupings"/>
+                <menu-item name="Create family" workflow="CreateFamilyGrouping" priv="GRP_W"/>
+                <menu-item name="Create" workflow="CreateGrouping" priv="GRP_W"/>
+            </menu-item>
+            <menu-item name="Groups" priv="GRP_R">
+                <menu-item name="View and edit" workflow="ViewGroups"/>
+                <menu-item name="Create" workflow="CreateGroup" priv="GRP_W"/>
+                <menu-item name="Membership" workflow="ViewGroupMembership" priv="GRP_W"/>
+            </menu-item>    
+        </menu-item>
+    </menu>
+    
+    <!--mutants-->
+    <menu name="MUGEN Mice" priv="MODEL_R">
+        <menu-item name="View All" alt-name="View" priv="MODEL_R" alt-priv="MODEL_R" workflow="ViewModels"/>
+        <menu-item name="Create New" priv="MODEL_W" workflow="CreateModel"/>
+    </menu>
+    
+    <!--strains-->
+    <menu name="Strains" priv="PROJECT_ADM" workflow="ViewStrains"/>
+    
+    <!--genes header-->
+    <menu name="Genes">
+            <menu-item name="View All" workflow="ViewGenes"/>
+            <menu-item name="Create New" workflow="CreateGene" priv="MODEL_W"/>
+            <menu-item name="Stand Alones" workflow="ViewStandAloneGenes" priv="DEV"/>
+            <menu-item name="ENS Genes" workflow="ViewEnsemblIDGenes" priv="DEV"/>
+    </menu>
+    
+    <!--strain types-->
+    <menu name="Strain Types" priv="DEV">
+        <menu-item name="View All" workflow="ViewStrainTypes"/>
+        <menu-item name="Create New" priv="DEV" workflow="NotImplemented"/>
+    </menu>
+    
+    <!--strain states-->
+    <menu name="Strain States" priv="DEV">
+        <menu-item name="View All" workflow="ViewStrainStates"/>
+        <menu-item name="Create New" priv="DEV" workflow="NotImplemented"/>
+    </menu>
+    
+    <!--genetic background-->
+    <menu name="Genetic Back" priv="PROJECT_ADM">
+        <menu-item name="View All" workflow="ViewGeneticBackgroundValues"/>
+        <menu-item name="Create New" workflow="CreateGeneticBackgroundValue"/>
+    </menu>
+    
+    <!--available background-->
+    <menu name="Available Back" priv="PROJECT_ADM">
+        <menu-item name="View All" workflow="ViewAvailableGeneticBackgrounds"/>
+        <menu-item name="Create New" workflow="AddAvailableGeneticBackground"/>
+    </menu>
+    
+    <!--repositories-->
+    <menu name="Repositories" priv="PROJECT_ADM">
+        <menu-item name="View All" workflow="ViewRepositories"/>
+        <menu-item name="Create New" workflow="AddRepository"/>
+    </menu>
+    
+    <!--mutation types-->
+    <menu-item name="Mutation Types" priv="DEV" workflow="ViewMutationTypes"/>
+    
+    <!--f. significance-->
+    <menu name="F. significance." priv="DEV">
+            <menu-item name="View Types" workflow="ViewFuncSigTypes"/>
+            <menu-item name="Create Type" workflow="CreateFuncSigType"/>
+    </menu>
+    
+    <!--research application-->
+    <menu name="Research Appplications" priv="DEV">
+            <menu-item name="View All" workflow="ViewResearchApps"/>
+            <menu-item name="Create New" workflow="CreateResearchApp" priv="DEV"/>
+    </menu>
+    
+    <!--phenotypes header-->
+    <menu name="Phenotypes" priv="DEV"><!--priv="PHENO_R">-->
+        <menu-item name="Phenotypes">
+            <menu-item name="View" workflow="ViewPhenotypes"/>
+            <menu-item name="Create" workflow="CreatePhenotype" priv="PHENO_W"/>
+            <menu-item name="File import" priv="DEV"/>
+            <menu-item name="Status" priv="DEV" workflow="ViewPhenotypeStatus"/>
+        </menu-item>
+        <menu-item name="Variables" priv="VAR_R">
+            <menu-item name="View" workflow="ViewVariables"/>
+            <menu-item name="Create" workflow="CreateVariable" priv="VAR_W"/>
+        </menu-item>
+        <menu-item name="Variable sets" priv="VARS_R">
+            <menu-item name="View" workflow="ViewVariableSets"/>
+            <menu-item name="Create" workflow="CreateVariableSet" priv="VARS_W"/>
+        </menu-item>
+        <menu-item name="Unified variables" priv="UVAR_R">
+            <menu-item name="View" workflow="ViewUVariables"/>
+            <menu-item name="Create" workflow="CreateUVariable" priv="UVAR_W"/>
+            <menu-item name="Import" priv="DEV"/>
+            <menu-item name="Import mapping" priv="DEV"/>
+        </menu-item>
+        <menu-item name="Unified Variable sets" priv="UVARS_R">
+            <menu-item name="View" workflow="ViewUVariableSets"/>
+            <menu-item name="Create" workflow="CreateUVariableSet" priv="UVARS_W"/>
+        </menu-item>
+        
+        
+    </menu>
+    
+    <!--genotypes header-->
+    <menu name="Genotypes" priv="DEV"><!--priv="GENO_R">-->
+        <menu-item name="Genotypes">
+            <menu-item name="View" workflow="ViewGenotypes"/>
+            
+            <!-- A problem here!! -->
+            <menu-item name="Create" workflow="CreateGenotypes" priv="GENO_W0...."/>
+            
+            <menu-item name="Status" workflow="ViewGenotypeStatus"/>      
+            <menu-item name="Inheritance check" workflow="GenotypeInheritanceCheck"/>
+            <menu-item name="Parental view" workflow="ViewGenotypeParental"/>
+            <menu-item name="Child view" workflow="ViewGenotypeChild"/>
+            <menu-item name="Group view" workflow="ViewGenotypeGroup"/>
+        </menu-item>            
+        
+        <menu-item name="Markers" priv="MRK_R">
+            <menu-item name="View" workflow="ViewMarkers"/>
+            <menu-item name="Create" workflow="CreateMarker" priv="MRK_W"/>
+            <menu-item name="Library import" priv="DEV"/>
+            <menu-item name="File import" workflow="ImportMarker" priv="DEV"/>
+        </menu-item>
+
+        <menu-item name="Marker sets" priv="MRKS_R">
+            <menu-item name="View" workflow="ViewMarkerSets"/>
+            <menu-item name="Create" workflow="CreateMarkerSet" priv="MRK_W"/>
+            <menu-item name="Membership" workflow="ViewMarkerSetMembership" priv="MRK_W"/>
+            <menu-item name="Positions" workflow="ViewMarkerSetPositions" priv="MRK_W"/>
+            <menu-item name="File import" priv="DEV"/>
+        </menu-item>
+
+        <menu-item name="Unified Markers" priv="UMRK_R">
+            <menu-item name="View" workflow="ViewUMarkers"/>
+            <menu-item name="Create" workflow="CreateUMarker" priv="UMRK_W"/>
+            <menu-item name="Library import" priv="DEV"/>
+            <menu-item name="File import" priv="DEV"/>
+        </menu-item>
+
+        <menu-item name="Unified Marker sets" priv="UMRKS_R">
+            <menu-item name="View" workflow="ViewUMarkerSets"/>
+            <menu-item name="Create" workflow="CreateUMarkerSet" priv="UMRKS_W"/>
+            <menu-item name="Membership" workflow="ViewUMarkerSetMembership" priv="UMRKS_W"/>
+            <menu-item name="Positions" workflow="ViewUMarkerSetPositions" priv="UMRKS_W"/>
+            <menu-item name="File import" priv="DEV"/>
+        </menu-item>
+            
+            
+            
+            
+        
+        
+    </menu>
+    
+    <!--import+export header-->
+    <menu name="Import and Exports" priv="DEV">
+        <menu-item name="Filters">
+            <menu-item name="View" workflow="ViewFilters"/>
+            <menu-item name="Create" workflow="CreateFilter"/>
+        </menu-item>
+        
+        
+        <menu-item name="Import Jobs">
+            <menu-item name="View Jobs" workflow="ViewImportJobs"/>
+        </menu-item>
+        
+        <menu-item name="Export">
+            <menu-item name="View and edit" workflow="ViewExports"/>
+            <menu-item name="Export" workflow="ExportIndividuals"/>
+        </menu-item>
+        
+        
+        
+        <menu-item name="Test">
+            <menu-item name="View files" workflow="ViewFiles"/>
+            <menu-item name="FileUploadTest" workflow="FileUploadTest"/>
+        </menu-item>
+    </menu>
+    
+    <!--search header-->
+    <menu name="Search" priv="DEV">
+        <menu-item name="Models" workflow="SearchModel"/>
+        <menu-item name="Keywords" workflow="SearchKeyword"/>
+    </menu>
+    
+    <!--IMSR header-->
+    <menu name="IMSR" priv="DEV">
+        <menu-item name="IMSRFile" workflow="IMSRFile"/>
+        <menu-item name="UniqueIMSRFile" workflow="UniqueIMSRFile"/>
+    </menu>
+    
+    <!--dissemination update header-->
+    <menu name="Dissemination" priv="PROJECT_ADM" workflow="DisseminationUpdate"/>
+    
+    <!--MP Term Update-->
+    <menu name="MP Update" priv="DEV">
+        <menu-item name="MP Load" workflow="updateMP"/>
+        <menu-item name="MP Install" workflow="validateMP"/>
+    </menu>
+    
+    <!--PATO Load-->
+    <menu name="Ontologies" priv="DEV">
+        <menu-item name="Load PATO" workflow="LoadPato"/>
+        <menu-item name="Load MA" workflow="LoadMa"/>
+        <menu-item name="Load GO" workflow="LoadGo"/>
+        <menu-item name="Load CELL" workflow="LoadCell"/>
+        <menu-item name="Load CHEBI" workflow="LoadChebi"/>
+        <menu-item name="Load EMAP" workflow="LoadEmap"/>
+        <menu-item name="Load DOID" workflow="LoadDoid"/>
+        <menu-item name="Load IMR" workflow="LoadImr"/>
+        <menu-item name="Load MPATH" workflow="LoadMpath"/>
+        <menu-item name="Load XP" workflow="LoadXp"/>
+    </menu>
+    
+    <!--PhenoParser-->
+    <menu name="PhenoParser" priv="DEV">
+        <menu-item name="PhenoParser" workflow="PhenoParser"/>
+        <menu-item name="PhenoTermsCheck" workflow="PhenoTermParser"/>
+        <menu-item name="PhenoTree" workflow="PhenoTreeLevelOne"/>
+    </menu>
+    
+    <!--mutant backcrossing list-->
+    <menu name="BackCross" priv="DEV">
+        <menu-item name="BackCrossNow" workflow="BackcrossingList"/>
+    </menu>
+    
+    <menu name="Resources" workflow="OnlineResources"/>
+    <!--menu name="QuestA" workflow="QuestionnaireA"/-->
+    <menu name="My Account" priv="MODEL_W" workflow="ViewMyAccount"/>
+    
+    <!--menu name="Logout" workflow="logout"/-->
+</menus>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <META HTTP-EQUIV="Window-target" CONTENT="_top">
+        <title>MUGEN Environment</title>
+        <link rel="stylesheet" type="text/css" href="test.css" />
+        <link rel="SHORTCUT ICON" href="images/favicon.ico" type="image/x-icon">    
+    </head>
+    <body>
+    <div id="centered">
+        <form action="Controller" name="login" method="post">        
+            <table class="login" align="center">
+                <tr>
+                    <td height="15" align="left" valign="middle">
+                         <table width="450" height="215" background="images/login_pic.jpg">
+                            <tr>
+				<td width="150">&nbsp;</td>
+                                <td colspan=2><h1>member login</h1></td>
+                            </tr>
+                            <tr>
+				<td width="150">&nbsp;</td>
+                                <td width="30">user:</td>
+				<td><input type="text" name="usr"></td>
+				<td width="100" rowspan="2"><input name="Submit" type="image" value="Login" src="images/icons/nav_right_blue.png" align="left"></td>
+                            </tr>
+                            <tr>
+                                <td width="150">&nbsp;</td>
+				<td width="30">pass:</td>
+				<td><input type="password" name="pwd"></td>
+                            </tr>
+                            <tr>
+                                <td colspan=4 align="right">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td width="150"></td>
+				<td colspan=3><a href="Controller?usr=public&pwd=notknown"><h1>public login</h1></a></td>
+                            </tr> 
+               		  </table>
+                    </td>
+                </tr>
+          </table>
+          <table align="center">
+              <tr><td>Invalid username or password. Please try again.</td></tr>
+          </table>
+        </form>
+    </div>
+    </body>
+</html>

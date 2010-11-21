@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<configuration xmlns='http://java.sun.com/xml/ns/jax-rpc/ri/config'>
+	<service name='mugenws' targetNamespace='urn:mugenws/wsdl' typeNamespace='urn:mugenws/types' packageName='org.mugen.ws'>
+		<interface name='org.mugen.ws.mugenwsSEI' servantName='org.mugen.ws.mugenwsImpl'>
+		</interface>
+	</service>
+</configuration>
