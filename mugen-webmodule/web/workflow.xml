@@ -421,7 +421,7 @@
         <state name="viewUMarkerSetPositions" preaction="genotype.GetUMarkerSetPositionsAction" viewURI="views/genotype/UMarkerSetPositionsView.jsp" action="genotype.UMarkerSetPositionPostAction"/>
         <state workflow="ViewUMarkerSetPositions"/>
     </workflow> 
-    <!--workflow name="CreateUMarkerSet">
+    <workflow name="CreateUMarkerSet">
         <state name="createUMarkerSet" preaction="genotype.GetUMarkerSetAction" viewURI="views/genotype/UMarkerSetCreateView.jsp" action="genotype.SaveUMarkerSetAction"/>
         <state workflow="ViewUMarkerSets"/>
     </workflow> 
@@ -431,7 +431,7 @@
     </workflow> 
     <workflow name="ViewUMarkerSet">
         <state name="viewUMarkerSet" preaction="genotype.GetUMarkerSetAction" viewURI="views/genotype/UMarkerSetView.jsp"/>       
-    </workflow-->
+    </workflow>
     <workflow name="ViewUMarkerSets">
         <state name="viewUMarkerSets" preaction="genotype.GetUMarkerSetsAction" viewURI="views/genotype/UMarkerSetsView.jsp" action="genotype.UMarkerSetsPostAction"/>
         <state workflow="ViewUMarkerSets"/>
@@ -1202,7 +1202,7 @@
         
     <!-- Import workflows -->
     
-    <workflow name="ViewImportJobs">
+    <!--workflow name="ViewImportJobs">
         <state name="view" preaction="fileimport.GetReports" viewURI="views/import/Reports.jsp"/>
     </workflow>
     
@@ -1220,7 +1220,6 @@
         <state workflow="ViewImportJobs"/>
     </workflow>
     
-    <!-- Specific Import Workflows -->
     <workflow name="ImportIndividual">
         <state name="imp" preaction="fileimport.ImportIndPreAction" viewURI="views/import/ImportIndividualView.jsp" action="fileimport.ImportAction"/>
         <state name="info" viewURI="views/import/ImportInfo.jsp"/>  
@@ -1230,7 +1229,7 @@
         <state name="imp" preaction="fileimport.ImportIndPreAction" viewURI="views/import/ImportMarker.jsp" action="fileimport.ImportAction"/>
         <state name="info" viewURI="views/import/ImportInfo.jsp"/>  
         <state workflow="ViewImportJobs"/>
-    </workflow>
+    </workflow-->
     
     <!--Help Frame Section-->
     <workflow name="RevealIcons">
