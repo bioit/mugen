@@ -1,6 +1,5 @@
 package com.arexis.mugen.project;
 
-import com.arexis.arxframe.Controller;
 import com.arexis.mugen.exceptions.ApplicationException;
 import com.arexis.mugen.exceptions.PermissionDeniedException;
 import com.arexis.mugen.MugenCaller;
@@ -170,8 +169,7 @@ public abstract class AbstractMugenBean implements Serializable {
      * @throws com.arexis.mugen.exceptions.PermissionDeniedException If the user did not have the privilege
      */
     protected void validate(String priv, MugenCaller caller) throws PermissionDeniedException {
-        if (!caller.hasPrivilege(priv) && !caller.isAdmin())
-        {
+        if (!caller.hasPrivilege(priv) && !caller.isAdmin()) {
             PermissionDeniedException pd = new PermissionDeniedException("No privilege: "+priv+" is required for user "+caller.getName()+"["+caller.getId()+"]");
             pd.fillInStackTrace();
             

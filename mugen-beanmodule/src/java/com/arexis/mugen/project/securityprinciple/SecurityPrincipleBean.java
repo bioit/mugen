@@ -363,13 +363,12 @@ public class SecurityPrincipleBean extends AbstractMugenBean implements javax.ej
      */
     public ProjectRemote getProject() {
         ProjectRemote project = null;
-        try
-        {
+        try {
             project = projectHome.findByPrimaryKey(new Integer(pid), null);
         }
-        catch (Exception e)
-        {
-            e.printStackTrace();
+        catch (Exception e) {
+//            e.printStackTrace();
+            logger.error(getStackTrace(e));
         }
         return project;
     }

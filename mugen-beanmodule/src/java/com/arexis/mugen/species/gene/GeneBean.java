@@ -12,7 +12,6 @@ import com.arexis.mugen.search.Keyword;
 import com.arexis.mugen.servicelocator.ServiceLocator;
 import com.arexis.mugen.species.chromosome.ChromosomeRemote;
 import com.arexis.mugen.species.chromosome.ChromosomeRemoteHome;
-import com.arexis.mugen.model.strain.allele.StrainAlleleRemote;
 import com.arexis.mugen.model.strain.allele.StrainAlleleRemoteHome;
 import java.rmi.RemoteException;
 import java.sql.Date;
@@ -21,7 +20,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import javax.ejb.CreateException;
 import javax.ejb.EJBException;
 import javax.ejb.FinderException;
@@ -35,7 +33,7 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
     private java.sql.Date ts;
     
     private boolean dirty;
-    private UserRemoteHome userHome;
+    private UserRemoteHome _userHome;
     private ExpModelRemoteHome modelHome;
     private ProjectRemoteHome projectHome;
     private ChromosomeRemoteHome chromosomeHome;
@@ -46,7 +44,7 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
     
     public void setEntityContext(javax.ejb.EntityContext aContext) {
         context = aContext;
-        userHome = (UserRemoteHome)locator.getHome(ServiceLocator.Services.USER);
+        _userHome = (UserRemoteHome)locator.getHome(ServiceLocator.Services.USER);
         modelHome = (ExpModelRemoteHome)locator.getHome(ServiceLocator.Services.EXPMODEL);
         projectHome = (ProjectRemoteHome)locator.getHome(ServiceLocator.Services.PROJECT);
         chromosomeHome = (ChromosomeRemoteHome)locator.getHome(ServiceLocator.Services.CHROMOSOME);
@@ -219,7 +217,7 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
         PreparedStatement ps = null;
         ResultSet result = null;
         int key = 0;
-        int gaid = 0;
+//        int gaid = 0;
         Collection arr = new ArrayList();
         try {
             
@@ -247,10 +245,11 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
     }
 
     public java.util.Collection ejbFindByProject(int pid, MugenCaller caller, boolean all) throws javax.ejb.FinderException {
+        setCaller(caller);
         makeConnection();
         
         Collection arr = new ArrayList();
-        int gaid = 0;
+//        int gaid = 0;
         
         PreparedStatement ps = null;
         ResultSet result = null;
@@ -544,40 +543,54 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
         ts = new java.sql.Date(System.currentTimeMillis());         
     }
     
-    public void setCaller(MugenCaller caller) {
-        this.caller = caller;
-    }
+//    public void setCaller(MugenCaller caller) {
+//        this.caller = caller;
+//    }
 
     public Collection getModels() {
         try {
             Collection models = modelHome.findByGene(gaid, caller);
             return models;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            logger.error(getStackTrace(e));
             throw new EJBException("Could not get models");
         }
     }
     
+//    public int getModelscount() throws ApplicationException {
+//        makeConnection();
+//        try {
+//
+//            PreparedStatement ps = conn.prepareStatement("select count(m.eid) as num from r_gene_model r, model m where r.eid = m.eid and gaid = ? and level <= ? ");
+//            ps.setInt(1, gaid);
+//            ps.setInt(2, getCallerLevel(caller));
+//
+//            ResultSet result = ps.executeQuery();
+//            int num = 0;
+//            if(result.next())
+//                num = result.getInt("num");
+//
+//            return num;
+//        } catch (Exception e) {
+////            e.printStackTrace();
+//            logger.error(getStackTrace(e));
+//            throw new ApplicationException("GeneBean#getModelscount Unable to count models. \n"+e.getMessage());
+//        } finally {
+//            releaseConnection();
+//        }
+//    }
+
     public int getModelscount() throws ApplicationException {
-        makeConnection();
+        int num = 0;
         try {
-            
-            PreparedStatement ps = conn.prepareStatement("select count(m.eid) as num from r_gene_model r, model m where r.eid = m.eid and gaid = ? and level <= ? ");
-            ps.setInt(1, gaid);
-            ps.setInt(2, getCallerLevel(caller));
-            
-            ResultSet result = ps.executeQuery();
-            int num = 0;
-            if(result.next())
-                num = result.getInt("num");
-            
-            return num;
+//            if(caller == null) logger.debug("caller was null m8");
+            num = modelHome.findByGene(gaid, caller).size();
+
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new ApplicationException("GeneBean#getModelscount Unable to count models. \n"+e.getMessage());
-        } finally {
-            releaseConnection();
+            logger.error(getStackTrace(e));
         }
+        return num;
     }
     
     public Collection getAlleles() {
@@ -618,7 +631,7 @@ public class GeneBean extends AbstractMugenBean implements javax.ejb.EntityBean,
     
     public UserRemote getUser() {
         try {
-            UserRemote usr = userHome.findByPrimaryKey(new Integer(id));
+            UserRemote usr = _userHome.findByPrimaryKey(new Integer(id));
             return usr;
         } catch (Exception e) {
             throw new EJBException("Could not get user");

@@ -32,7 +32,7 @@
                         <td>Comment</td>
                     </tr>
                     <tr>
-                        <td><textarea type="text" cols="35" rows="6" name="comm"></textarea></td>
+                        <td><textarea type="text" cols="35" rows="6" name="comm"/></td>
                     </tr>                    
                 </table>
             </p>

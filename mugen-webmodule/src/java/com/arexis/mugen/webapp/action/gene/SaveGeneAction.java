@@ -15,7 +15,7 @@ public class SaveGeneAction extends MugenAction {
     
     public boolean performAction(HttpServletRequest request, ServletContext context) throws ApplicationException {
         try {
-            MugenCaller caller = (MugenCaller)request.getSession().getAttribute("caller");
+            MugenCaller _caller = (MugenCaller)request.getSession().getAttribute("caller");
             
             int gaid = 0;
             
@@ -32,9 +32,9 @@ public class SaveGeneAction extends MugenAction {
                 String cid = request.getParameter("cid");
                 int i_cid = new Integer(cid).intValue();
             
-                modelManager.updateGene(gaid, name, comm, mgiid, genesymbol, geneexpress, idgene, idensembl, i_cid, caller);
+                modelManager.updateGene(gaid, name, comm, mgiid, genesymbol, geneexpress, idgene, idensembl, i_cid, _caller);
                 
-                projectManager.log("user "+caller.getName()+" updated gene "+gaid, getName(), caller.getName(), request.getRemoteAddr(), request.getRemoteHost());
+                projectManager.log("user "+_caller.getName()+" updated gene "+gaid, getName(), _caller.getName(), request.getRemoteAddr(), request.getRemoteHost());
             }
             else
             {
@@ -48,9 +48,9 @@ public class SaveGeneAction extends MugenAction {
                 String cid = request.getParameter("cid");
                 int i_cid = new Integer(cid).intValue();
             
-                gaid = modelManager.createGene(name, comm, mgiid, genesymbol, geneexpress, idgene, idensembl, i_cid, caller);
+                gaid = modelManager.createGene(name, comm, mgiid, genesymbol, geneexpress, idgene, idensembl, i_cid, _caller);
                 
-                projectManager.log("user "+caller.getName()+" created gene "+gaid, getName(), caller.getName(), request.getRemoteAddr(), request.getRemoteHost());
+                projectManager.log("user "+_caller.getName()+" created gene "+gaid, getName(), _caller.getName(), request.getRemoteAddr(), request.getRemoteHost());
                 
                 //Workflow wf = (Workflow)request.getAttribute("workflow");
                 //wf.setAttribute("gaid", new Integer(gaid).toString());

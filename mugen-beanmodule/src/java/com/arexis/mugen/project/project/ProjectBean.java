@@ -51,7 +51,7 @@ public class ProjectBean extends AbstractMugenBean implements javax.ejb.EntityBe
      */
     private String status;
     
-    private MugenCaller caller;
+//    private MugenCaller caller;
     
     private boolean dirty;
    

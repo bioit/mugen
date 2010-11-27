@@ -1,14 +1,5 @@
-/*
- * MugenCaller.java
- *
- * Created on June 29, 2005, 2:45 PM
- *
- * To change this template, choose Tools | Options and locate the template under
- * the Source Creation and Management node. Right-click the template and choose
- * Open. You can then make changes to the template in the Source Editor.
- */
-
 package com.arexis.mugen;
+
 import com.arexis.arxframe.Caller;
 import com.arexis.mugen.project.privilege.PrivilegeRemote;
 import com.arexis.mugen.project.project.ProjectRemote;
@@ -246,7 +237,7 @@ public class MugenCaller extends Caller implements Serializable {
             
             ServiceLocator locator = ServiceLocator.getInstance();
             UserRemoteHome userHome = (UserRemoteHome)locator.getHome(ServiceLocator.Services.USER);
-            UserRemote user = userHome.findByPrimaryKey(new Integer(id));
+            UserRemote user = userHome.findByPrimaryKey(new Integer(id), this);
             
             isAdmin = user.isAdmin();
             

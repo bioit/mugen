@@ -1,25 +1,19 @@
 package com.arexis.mugen.model.usercomments;
 
-import com.arexis.mugen.MugenCaller;
 import com.arexis.mugen.exceptions.ApplicationException;
 import com.arexis.mugen.model.expmodel.ExpModelRemoteHome;
 import com.arexis.mugen.project.AbstractMugenBean;
-import com.arexis.mugen.project.project.ProjectRemote;
 import com.arexis.mugen.project.project.ProjectRemoteHome;
 import com.arexis.mugen.project.user.UserRemote;
 import com.arexis.mugen.project.user.UserRemoteHome;
-import com.arexis.mugen.search.Keyword;
 import com.arexis.mugen.servicelocator.ServiceLocator;
-import com.arexis.mugen.species.chromosome.ChromosomeRemote;
 import com.arexis.mugen.species.chromosome.ChromosomeRemoteHome;
-import java.rmi.RemoteException;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import javax.ejb.CreateException;
 import javax.ejb.EJBException;
 import javax.ejb.FinderException;

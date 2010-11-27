@@ -26,7 +26,7 @@ public class GetModelsAction extends MugenAction {
     public boolean performAction(HttpServletRequest req, ServletContext context) throws ApplicationException {
         try {
             HttpSession se = req.getSession();
-            MugenCaller caller = (MugenCaller)se.getAttribute("caller");            
+            MugenCaller _caller = (MugenCaller)se.getAttribute("caller");
             Navigator nav = (Navigator)se.getAttribute("navigator");
             PageManager pgm = nav.getPageManager();
             
@@ -67,7 +67,7 @@ public class GetModelsAction extends MugenAction {
             
             req.setAttribute("formdata", formDataManager);
             
-            pgm.setMax(modelManager.getExperimentalModelsByForm(formDataManager, caller));
+            pgm.setMax(modelManager.getExperimentalModelsByForm(formDataManager, _caller));
             
             pgm.setDelta(new Integer(formDataManager.getValue("delta")).intValue());
             
@@ -82,24 +82,24 @@ public class GetModelsAction extends MugenAction {
             
             Collection models = modelManager.getExperimentalModelsByPGM(pgm);
             
-            req.setAttribute("samplingunits", samplingUnitManager.getSamplingUnits(caller.getPid(), caller));              
+            req.setAttribute("samplingunits", samplingUnitManager.getSamplingUnits(_caller.getPid(), _caller));
             req.setAttribute("modelsdto", models);
             
-            req.setAttribute("participants", modelManager.getParticipants(caller));
-            req.setAttribute("researchers", modelManager.getParticipantNames(caller));
-            req.setAttribute("mutations", modelManager.getMutationTypes(caller.getPid(), caller));
+            req.setAttribute("participants", modelManager.getParticipants(_caller));
+            req.setAttribute("researchers", modelManager.getParticipantNames(_caller));
+            req.setAttribute("mutations", modelManager.getMutationTypes(_caller.getPid(), _caller));
             req.setAttribute("mpterms", modelManager.endMPs());
             
-            req.setAttribute("rapps", modelManager.getResearchApplications(caller));
-            req.setAttribute("funcsigtypes", modelManager.getFunctionalSignificanceTypes(caller));
-            req.setAttribute("genes", modelManager.getGenesByProject(caller.getPid(), caller, false));
+            req.setAttribute("rapps", modelManager.getResearchApplications(_caller));
+            req.setAttribute("funcsigtypes", modelManager.getFunctionalSignificanceTypes(_caller));
+            req.setAttribute("genes", modelManager.getGenesByProject(_caller.getPid(), _caller, false));
             
             req.setAttribute("sortby", modelManager.getOrderByTypes());
             req.setAttribute("disseminationlevels", modelManager.getLevelsForModel());
             
             req.setAttribute("deltas", modelManager.getDeltas());
             
-            req.setAttribute("samplingUnit", new Integer(caller.getSuid()).toString());
+            req.setAttribute("samplingUnit", new Integer(_caller.getSuid()).toString());
             
             return true;
         } catch (ApplicationException e) {

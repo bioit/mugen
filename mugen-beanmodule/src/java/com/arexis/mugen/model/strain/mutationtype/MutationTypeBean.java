@@ -185,7 +185,7 @@ public class MutationTypeBean extends AbstractMugenBean implements EntityBean, M
     public Collection ejbFindByProject(int pid, MugenCaller caller) throws javax.ejb.FinderException
     {
         makeConnection();
-        this.caller = caller;
+        setCaller(caller);
         Collection arr = new ArrayList();
         
         PreparedStatement ps = null;

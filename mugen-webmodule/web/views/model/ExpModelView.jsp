@@ -548,7 +548,9 @@
             <!--table for availability-->
             <m:window title="User's Comments" name="model.block.usercomments" workflow="ViewModel">
                 <menu>
+                    <m:hide privilege="MODEL_ADM" suid="<%=modeldto.getSuid()%>">
                     <a href="Controller?workflow=AddUserComment&eid=<jsp:getProperty name="modeldto" property="eid"/>" title="post comment">&nbsp;[post comment]</a>
+                    </m:hide>
                 </menu>
                 <body>
                     <table class="block_data">

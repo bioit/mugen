@@ -25,8 +25,6 @@ import com.arexis.mugen.model.availability.AvailabilityRemoteHome;
 import com.arexis.mugen.model.modelmanager.AvailabilityDTO;
 
 import com.arexis.mugen.phenotype.ontology.PhenotypeOntologyPathRemote;
-import com.arexis.mugen.phenotype.ontology.PhenotypeOntologyPathRemoteHome;
-import com.arexis.mugen.model.modelmanager.pathsMP;
 
 import com.arexis.mugen.model.geneticbackground.GeneticBackgroundRemote;
 import com.arexis.mugen.model.geneticbackground.GeneticBackgroundRemoteHome;
@@ -54,7 +52,6 @@ import javax.ejb.CreateException;
 import javax.ejb.EJBException;
 import javax.ejb.FinderException;
 import javax.ejb.ObjectNotFoundException;
-import org.apache.log4j.Logger;
 
 public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.arexis.mugen.model.expmodel.ExpModelRemoteBusiness {
     
@@ -63,7 +60,7 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
     private javax.ejb.EntityContext context;
     private String researchApplicationText, availability, geneticBackground, groupName;
     
-    private static Logger logger = Logger.getLogger(ExpModelBean.class);
+//    private static Logger logger = Logger.getLogger(ExpModelBean.class);
     
     private int level;
     
@@ -86,7 +83,7 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
     private StrainRemoteHome strainHome;
     private StrainAlleleRemoteHome alleleHome;
     private MutationTypeRemoteHome mutationHome;
-    private UserRemoteHome userHome;
+    private UserRemoteHome _userHome;
     private ResourceRemoteHome resourceHome;
     private AvailabilityRemoteHome availabilityHome;
     //</editor-fold>
@@ -106,7 +103,7 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
         alleleHome = (StrainAlleleRemoteHome)locator.getHome(ServiceLocator.Services.STRAIN_ALLELE);
         mutationHome = (MutationTypeRemoteHome)locator.getHome(ServiceLocator.Services.MUTATION_TYPE);
         
-        userHome = (UserRemoteHome)locator.getHome(ServiceLocator.Services.USER);
+        _userHome = (UserRemoteHome)locator.getHome(ServiceLocator.Services.USER);
         resourceHome = (ResourceRemoteHome)locator.getHome(ServiceLocator.Services.RESOURCE);
         availabilityHome = (AvailabilityRemoteHome)locator.getHome(ServiceLocator.Services.AVAILABILITY);
         genbackHome = (GeneticBackgroundRemoteHome)locator.getHome(ServiceLocator.Services.GENETIC_BACKGROUND);
@@ -438,7 +435,7 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
     }
     
     public java.util.Collection ejbFindByGene(int gaid, MugenCaller caller) throws javax.ejb.FinderException {
-        setCaller(caller);
+//        setCaller(caller);
         makeConnection();
         Collection models = new ArrayList();
         PreparedStatement ps = null;
@@ -453,7 +450,8 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
                 models.add(new Integer(result.getInt("eid")));
             }
         } catch (SQLException se) {
-            se.printStackTrace();
+//            se.printStackTrace();
+            logger.error(getStackTrace(se));
             throw new FinderException("ExpModelBean#ejbFindByGene: Cannot find models by gene\n"+se.getMessage());
         } finally {
             releaseConnection();
@@ -1244,7 +1242,7 @@ public class ExpModelBean extends ExpObj implements javax.ejb.EntityBean, com.ar
     public UserRemote getContact() {
         try
         {
-            UserRemote usr = userHome.findByPrimaryKey(new Integer(contact));
+            UserRemote usr = _userHome.findByPrimaryKey(new Integer(contact));
             return usr;
         }
         catch (Exception e)

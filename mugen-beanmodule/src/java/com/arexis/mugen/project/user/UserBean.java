@@ -1,4 +1,5 @@
 package com.arexis.mugen.project.user;
+
 import com.arexis.mugen.MugenCaller;
 import com.arexis.mugen.encryption.StringEncrypter;
 import com.arexis.mugen.encryption.StringEncrypter.EncryptionException;
@@ -253,6 +254,10 @@ public class UserBean extends AbstractMugenBean implements javax.ejb.EntityBean,
     
     // </editor-fold>
     
+    public Integer ejbFindByPrimaryKey(Integer aKey, MugenCaller caller) throws javax.ejb.FinderException {
+        setCaller(caller);
+        return ejbFindByPrimaryKey(aKey);
+    }
     /**
      * See EJB 2.0 and EJB 2.1 section 12.2.5
      */

@@ -1865,7 +1865,8 @@ public class ModelManagerBean extends AbstractMugenBean implements javax.ejb.Ses
     //gene(s) functions
     //<editor-fold defaultstate="collapsed">
     public Collection getGenesByModel(int eid, com.arexis.mugen.MugenCaller caller) throws ApplicationException {
-        try {                                            
+        try {
+            setCaller(caller);
             Collection genes = geneHome.findByModel(eid);
             Collection dtos = new ArrayList();
             Iterator i = genes.iterator();
@@ -1898,13 +1899,17 @@ public class ModelManagerBean extends AbstractMugenBean implements javax.ejb.Ses
     }
    
     public Collection getGenesByProject(int pid, MugenCaller caller, boolean all) throws ApplicationException{
-        try {                                            
+        try {
+            setCaller(caller);
             Collection genes = geneHome.findByProject(pid, caller, all);
             Collection dtos = new ArrayList();
             GeneDTO tmpGene = null;
             Iterator i = genes.iterator();
             while(i.hasNext()) {
-                tmpGene = new GeneDTO((GeneRemote)i.next());
+                GeneRemote tmp = (GeneRemote)i.next();
+                //TODO - I must investigate why GeneBean does not update the caller value without explicitly setting it by hand!!!
+                tmp.setCaller(caller);
+                tmpGene = new GeneDTO(tmp);
                 //if (tmpGene.getName().compareTo("Unknown")!=0){
                     dtos.add(tmpGene);
                 //}
@@ -3532,20 +3537,23 @@ public class ModelManagerBean extends AbstractMugenBean implements javax.ejb.Ses
     //<editor-fold defaultstate="collapsed">
     
     public int createUserComment(int eid, String comm, com.arexis.mugen.MugenCaller caller) throws ApplicationException {
+        int commid = 0;
         try {
             makeConnection();
-            int commid = getIIdGenerator().getNextId(conn, "comms_seq");
+            validate("MODEL_W", caller);
+            commid = getIIdGenerator().getNextId(conn, "comms_seq");
             UserCommsRemote usercomm = usercommHome.create(commid, caller.getId());
             usercomm.setComm(comm);
             usercomm.connectModel(eid);
-            //RepositoriesRemote repository = repositoriesHome.create(rid, reponame, repourl, project);
-            return usercomm.getCommid();
+//            return usercomm.getCommid();
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new ApplicationException("Could not user comment. \n"+e.getMessage(),e);            
+//            e.printStackTrace();
+//            throw new ApplicationException("Could not user comment. \n"+e.getMessage(),e);
+            logger.error("Could not add user comment to model with id " + eid + " \n " + getStackTrace(e));
         } finally {
             releaseConnection();
-        }  
+        }
+        return commid;
     }
     
     public void deleteUserComment(int commid, com.arexis.mugen.MugenCaller caller) throws ApplicationException {
@@ -3555,8 +3563,9 @@ public class ModelManagerBean extends AbstractMugenBean implements javax.ejb.Ses
             usercomm.remove();
             //return commid;
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new ApplicationException("Could not remove user comment.", e);            
+//            e.printStackTrace();
+//            throw new ApplicationException("Could not remove user comment.", e);
+            logger.error("Could not delete user comment with id " + commid + " \n " + getStackTrace(e));
         }
     } 
     

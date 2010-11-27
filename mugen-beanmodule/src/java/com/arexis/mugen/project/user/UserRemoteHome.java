@@ -16,6 +16,8 @@ public interface UserRemoteHome extends javax.ejb.EJBHome {
      */
     UserRemote findByPrimaryKey(Integer key)  throws javax.ejb.FinderException, java.rmi.RemoteException;
 
+    UserRemote findByPrimaryKey(Integer key, MugenCaller caller)  throws javax.ejb.FinderException, java.rmi.RemoteException;
+
     com.arexis.mugen.project.user.UserRemote create(int id, java.lang.String usr, java.lang.String pwd, java.lang.String name, java.lang.String status) throws javax.ejb.CreateException, java.rmi.RemoteException;
 
     com.arexis.mugen.project.user.UserRemote findByUsr(java.lang.String usr) throws javax.ejb.FinderException, java.rmi.RemoteException;

@@ -1,4 +1,3 @@
-
 package com.arexis.mugen.project.projectmanager;
 
 import com.arexis.arxframe.io.FileDataObject;
