@@ -276,6 +276,9 @@
     <menu name="BackCross" priv="DEV">
         <menu-item name="BackCrossNow" workflow="BackcrossingList"/>
     </menu>
+    <menu name="Groovy" priv="DEV">
+        <menu-item name="Test 1" workflow="GroovyTest1"/>
+    </menu>
     
     <menu name="Resources" workflow="OnlineResources"/>
     <!--menu name="QuestA" workflow="QuestionnaireA"/-->

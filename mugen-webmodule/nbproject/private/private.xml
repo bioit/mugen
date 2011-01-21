@@ -2,7 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/log4j.properties</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/test/test/GroovyTest.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/test/test/hello.groovy</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/com/arexis/mugen/webapp/action/MugenAction.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/org/mugen/groovy/ScriptLocator.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/com/arexis/mugen/webapp/action/groovy/GroovyTest1.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/web/views/groovy/GroovyTest1.jsp</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/com/arexis/mugen/webapp/action/model/GetModelsAction.java</file>
         <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/web/workflow.xml</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/web/views/contact/ContactFormReply.jsp</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/web/menu.xml</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/com/arexis/mugen/webapp/action/ConfirmAction.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-webmodule/src/java/com/arexis/mugen/webapp/action/model/CreateModelAction.java</file>
     </open-files>
 </project-private>

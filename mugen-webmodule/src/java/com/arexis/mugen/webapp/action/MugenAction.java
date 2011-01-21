@@ -31,6 +31,8 @@ import com.arexis.mugen.servicelocator.ServiceLocator;
 import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.apache.log4j.Logger;
+import org.mugen.groovy.ScriptLocator;
 
 
 /**
@@ -39,6 +41,10 @@ import javax.servlet.http.HttpSession;
  */
 public abstract class MugenAction extends Action {
     protected ServiceLocator locator;
+    
+    protected ScriptLocator script_locator;
+    
+    protected static Logger logger = Logger.getLogger(MugenAction.class);
     
     protected static SamplingUnitManagerRemote samplingUnitManager;
     protected static PhenotypeManagerRemote phenotypeManager;
@@ -52,6 +58,8 @@ public abstract class MugenAction extends Action {
     /** Creates a new instance of AbstractAction */
     public MugenAction() {
         locator = ServiceLocator.getInstance();
+        
+        script_locator = ScriptLocator.getInstance();
         
         //SamplingUnitManagerRemoteHome s = (SamplingUnitManagerRemoteHome)locator.getHome(ServiceLocator.Services.SAMPLINGUNITMANAGER);
         //samplingUnitManager = s.create();

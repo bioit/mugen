@@ -1464,4 +1464,9 @@
         <state name="mugencontactview2" viewURI="views/contact/ContactFormReply.jsp"/>
     </workflow>
     
+    <!--Groovy-->
+    <workflow name="GroovyTest1">
+        <state name="groovyTest1" preaction="groovy.GroovyTest1" viewURI="views/groovy/GroovyTest1.jsp"/>    
+    </workflow>
+    
 </workflows>

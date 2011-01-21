@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1">
         <file>
             <url>src/java/com/arexis/mugen/project/user/UserBean.java</url>
-            <line>524</line>
+            <line>529</line>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/MugenLogin.java</file>
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/MugenCaller.java</file>
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/project/projectmanager/ProjectManagerRemoteBusiness.java</file>
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/project/projectmanager/ProjectManagerBean.java</file>
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/project/user/UserBean.java</file>
-        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/project/AbstractMugenBean.java</file>
+        <file>file:/Users/discounix/Projects/mugen/mugen-beanmodule/src/java/com/arexis/mugen/servicelocator/ServiceLocator.java</file>
     </open-files>
 </project-private>
